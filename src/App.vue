@@ -1,7 +1,13 @@
 <template lang="">
-  <div></div>
+  <div>
+    <router-link to="/"> </router-link>
+    <router-link to="/sign-up"> </router-link>
+  </div>
+  <router-view></router-view>
 </template>
 <script>
-export default {};
+export default {
+  name: "App",
+};
 </script>
-<style lang=""></style>
+<style></style>

@@ -1,16 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  backgroundImage: {
+    "hero-bg": "url('/src/assets/hero-pattern.svg')",
+  },
   theme: {
     fontFamily: {
-      Mono: ["IBM Plex Mono", "monospace"],
-      poppins: ["Poppins", "sans-serif"],
+      inter:["Inter", "sans-serif"]
     },
     colors: {
       black: "#000000",
       black200: "#393939",
       white: "#FFFFFF",
-      nude:"#E2E1DD",
+      nude: "#E2E1DD",
       offWhite: "#F1F1F1",
       green100: "#388D86",
       green200: "#7a8c81",

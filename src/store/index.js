@@ -2,28 +2,32 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    userName: "",
-    userEmail: "",
-    password: "",
+    userDetails: {},
+    isSignedUp: false,
+    // userName: "",
+    // userEmail: "",
+    // password: "",
   },
   getters: {
-    isLoggedIn(state) {
-      if (state.userName && state.userEmail && state.password) {
-        return true;
-      } else return false;
+    // change this to getItem
+
+    getLocalStorage() {
+      const data = JSON.parse(localStorage.getItem("userDetails"));
+
+      if (data) this.isSignedUp = true;
     },
   },
   mutations: {
-    ADD_NEW_USER(state, userDetails) {
-      state.userName = userDetails.name;
-      state.userEmail = userDetails.email;
-      state.password = userDetails.password;
+    ADD_NEW_USER(state, userInfo) {
+      state.userDetails.userName = userInfo.name;
+      state.userDetails.userEmail = userInfo.email;
+      state.userDetails.password = userInfo.password;
     },
   },
   actions: {
     // userDetails has to be an object
-    addNewUser(context, userDetails) {
-      context.commit("ADD_NEW_USER", userDetails);
+    addNewUser(context, userInfo) {
+      context.commit("ADD_NEW_USER", userInfo);
     },
   },
   modules: {},

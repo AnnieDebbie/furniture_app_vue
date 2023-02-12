@@ -12,29 +12,32 @@
       <div
         class="h-[90%] w-1/3 bg-white p-12 space-y-12 absolute right-[40%] bottom-2"
       >
-        <h3 class="font-bold text-5xl">Create an account with us</h3>
+        <h3 class="font-bold text-3xl">Create an account with us</h3>
         <form class="flex flex-col space-y-8" action="">
           <input
             v-model="userDetails.name"
-            class="p-3 border-b-2 border-black placeholder:text-black text-3xl"
+            class="p-3 border-b-2 border-black placeholder:text-black text-2xl"
             placeholder="Full name"
+            required
             type="text"
           />
           <input
             v-model="userDetails.email"
-            class="p-3 border-b-2 border-black placeholder:text-black text-3xl"
+            class="p-3 border-b-2 border-black placeholder:text-black text-2xl"
             placeholder="Email address"
-            type="text"
+            required
+            type="email"
           />
           <input
             v-model="userDetails.password"
-            class="p-3 border-b-2 border-black placeholder:text-black text-3xl"
+            class="p-3 border-b-2 border-black placeholder:text-black text-2xl"
             placeholder="Password"
+            required
             type="password"
           />
 
           <ButtonUI
-            class="rounded rounded-sm bg-black text-white text-3xl p-4"
+            class="rounded rounded-sm bg-black text-white text-2xl p-4"
             @click.prevent="signUpHandler"
           >
             Create Account
@@ -62,7 +65,7 @@ export default {
 
     signUpHandler() {
       console.log(this.userDetails);
-      localStorage.setItem("userDetails", this.userDetails);
+      localStorage.setItem("userDetails", JSON.stringify(this.userDetails));
       this.addNewUser(this.userDetails);
 
       this.isValid();

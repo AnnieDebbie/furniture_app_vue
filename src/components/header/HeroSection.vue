@@ -10,7 +10,7 @@
 
         <div class="mb-4">
           <input
-            class="p-4 placeholder:text-black"
+            class="p-4 placeholder:text-black placeholder:text-sm"
             placeholder="Search your product here"
             type="text"
             name=""

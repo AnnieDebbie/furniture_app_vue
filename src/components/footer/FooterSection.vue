@@ -17,14 +17,12 @@
       </div>
       <div>
         <input
-          class="p-4 placeholder:text-black"
+          class="p-3 placeholder:text-black placeholder:text-sm"
           placeholder="Enter your email address"
           type="text"
-          name=""
-          id=""
         />
 
-        <ButtonUI class="rounded rounded-sm bg-black text-white p-4">
+        <ButtonUI class="rounded rounded-sm bg-black text-white p-3">
           Subscribe to our newsletter
         </ButtonUI>
       </div>

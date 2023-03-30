@@ -3,20 +3,8 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     userDetails: {},
-    isSignedUp: false,
-    // userName: "",
-    // userEmail: "",
-    // password: "",
   },
-  getters: {
-    // change this to getItem
 
-    getLocalStorage() {
-      const data = JSON.parse(localStorage.getItem("userDetails"));
-
-      if (data) this.isSignedUp = true;
-    },
-  },
   mutations: {
     ADD_NEW_USER(state, userInfo) {
       state.userDetails.userName = userInfo.name;

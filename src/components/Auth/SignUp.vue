@@ -63,20 +63,22 @@ export default {
   methods: {
     ...mapActions(["addNewUser"]),
 
+    isValid() {
+      if (Object.keys(this.userDetails).length > 0) {
+        this.isInputValid = true;
+      }
+    },
     signUpHandler() {
       console.log(this.userDetails);
       localStorage.setItem("userDetails", JSON.stringify(this.userDetails));
       this.addNewUser(this.userDetails);
 
       this.isValid();
-      if (this.isInputValid) {
-        this.$router.push({ name: "home" });
-      }
-    },
 
-    isValid() {
-      if (Object.keys(this.userDetails).length > 0) {
-        this.isInputValid = true;
+      if (this.isInputValid) {
+        this.$router.push({ name: "home" }).catch((error) => {
+          console.log(error.message);
+        });
       }
     },
   },
